@@ -1,0 +1,18 @@
+// mensaje.proto
+syntax = "proto3";
+
+package sep;
+
+message MensajeSEP {
+    int32 id = 1;
+    string contenido = 2;
+}
+
+service SEPService {
+    rpc EnviarMensaje(MensajeSEP) returns (Respuesta);
+}
+
+message Respuesta {
+    bool exito = 1;
+    string mensaje = 2;
+}
